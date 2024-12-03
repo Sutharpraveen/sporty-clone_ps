@@ -9,4 +9,9 @@ class AppText{
   static const String continueWithFacebook = "Continue with Facebook";
   static const String continueWithApple = "Continue with Apple";
   static const String logIn = "Log in";
+  static const String createAPassword = "Create a password";
+  static const String whatsYourEmail = "What's your email?";
+  static const String useAtLeast8Characters = "Use at least 8 characters.";
+  static const String next = "Next";
+  static const String confirmEmailLater = "You'll need to confirm this email later.";
 }
