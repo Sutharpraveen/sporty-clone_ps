@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:spotifyclone/constants/constants.dart';
+import 'package:spotifyclone/constants/image_paths.dart';
 import 'package:spotifyclone/screen/create_email_screen.dart';
+
+import '../constants/app_text.dart';
 
 class OnBoardingScreen extends StatelessWidget {
   const OnBoardingScreen({super.key});
@@ -13,10 +16,10 @@ class OnBoardingScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Image.asset("assets/images/onboarding_background.png"),
+            Image.asset(ImagePaths.onboardingBackground),
             const SizedBox(height: 10),
-            const CustomText("Millions of songs."),
-            const CustomText("Free on Spotify."),
+            const CustomText(AppText.millionsOfSongs),
+            const CustomText(AppText.freeOnSpotify),
             const SizedBox(height: 25),
             const _AuthButtons(),
           ],
@@ -56,7 +59,7 @@ class _AuthButtons extends StatelessWidget {
           // Sign up button
           _buildButton(
             context,
-            text: "Sign up free",
+            text: AppText.signUpFree,
             onPressed: () {
               Navigator.of(context).push(
                 MaterialPageRoute(
@@ -72,9 +75,9 @@ class _AuthButtons extends StatelessWidget {
           // Continue with Google button
           _buildButton(
             context,
-            text: "Continue with Google  kk",
+            text: AppText.continueWithGoogle,
             onPressed: () {},
-            icon: "assets/images/icon_google.png",
+            icon: ImagePaths.iconGoogle,
             borderColor: MyColors.lightGrey,
             textColor: MyColors.whiteColor,
           ),
@@ -83,9 +86,9 @@ class _AuthButtons extends StatelessWidget {
           // Continue with Facebook button
           _buildButton(
             context,
-            text: "Continue with Facebook",
+            text: AppText.continueWithFacebook,
             onPressed: () {},
-            icon: "assets/images/icon_facebook.png",
+            icon: ImagePaths.iconFacebook,
             borderColor: MyColors.lightGrey,
             textColor: MyColors.whiteColor,
           ),
@@ -94,9 +97,9 @@ class _AuthButtons extends StatelessWidget {
           // Continue with Apple button
           _buildButton(
             context,
-            text: "Continue with Apple",
+            text: AppText.continueWithApple,
             onPressed: () {},
-            icon: "assets/images/icon_apple.png",
+            icon: ImagePaths.iconApple,
             borderColor: MyColors.lightGrey,
             textColor: MyColors.whiteColor,
           ),
@@ -104,7 +107,7 @@ class _AuthButtons extends StatelessWidget {
 
           // Log in text
           const Text(
-            "Log in",
+            AppText.logIn,
             style: TextStyle(
                 fontFamily: "AB", fontSize: 16, color: MyColors.whiteColor),
           ),

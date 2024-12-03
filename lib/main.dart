@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:spotifyclone/constants/app_text.dart';
 import 'package:spotifyclone/screen/splash_screen.dart';
 
 void main(){
@@ -12,6 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: AppText.appName,
       theme: ThemeData(
           splashColor:Colors.transparent
       ),
