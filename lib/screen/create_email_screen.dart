@@ -87,7 +87,7 @@ class _CreateEmailScreenState extends State<CreateEmailScreen> {
                       ),
                       child: Center(
                         child: Text(
-                          "Next",
+                          "Next ",
                           style: TextStyle(
                             fontFamily: "AB",
                             color: isNextEnabled
