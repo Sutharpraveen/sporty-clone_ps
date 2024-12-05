@@ -3,7 +3,9 @@ import 'package:spotifyclone/constants/app_text.dart';
   import 'package:spotifyclone/constants/constants.dart';
   import 'package:spotifyclone/main.dart';
   import 'package:spotifyclone/screen/create_password_screen.dart';
+import 'package:spotifyclone/widgets/custom_button.dart';
   import 'package:spotifyclone/widgets/custom_text.dart';
+import 'package:spotifyclone/widgets/custom_textField.dart';
 
   class CreateEmailScreen extends StatefulWidget {
     const CreateEmailScreen({super.key});
@@ -36,26 +38,12 @@ import 'package:spotifyclone/constants/app_text.dart';
                     fontSize: 20,
                   ),
                   const SizedBox(height: 10),
-                  Container(
-                    height: 51,
-                    decoration: BoxDecoration(
-                      color: const Color(0xff777777),
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    child: TextField(
-                      onChanged: (value) {
-                        setState(() => text = value);
-                      },
-                      style: const TextStyle(
-                        fontSize: 14,
-                        fontFamily: "AM",
-                        color: MyColors.whiteColor,
-                      ),
-                      decoration: const InputDecoration(
-                        border: InputBorder.none,
-                        contentPadding: EdgeInsets.symmetric(horizontal: 10),
-                      ),
-                    ),
+
+                  CustomTextField(
+                    hintText: 'Enter your email',
+                    onChanged: (value) {
+                      setState(() => text = value);
+                    },
                   ),
                   const SizedBox(height: 8),
                   const Text(
@@ -69,39 +57,17 @@ import 'package:spotifyclone/constants/app_text.dart';
                   ),
                   const SizedBox(height: 35),
                   Center(
-                    child: GestureDetector(
-                      onTap: isNextEnabled
-                          ? () {
+                    child: CustomButton(
+                      validateText: true,
+                      text: text, // Pass your text value here
+                      onTap: () {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
                             builder: (context) => const CreatePasswordScreen(),
                           ),
                         );
-                      }
-                          : null,
-                      child: Container(
-                        height: 45,
-                        width: 90,
-                        decoration: BoxDecoration(
-                          color: isNextEnabled
-                              ? MyColors.whiteColor
-                              : MyColors.lightGrey,
-                          borderRadius: BorderRadius.circular(25),
-                        ),
-                        child: Center(
-                          child: Text(
-                            AppText.next,
-                            style: TextStyle(
-                              fontFamily: "AB",
-                              color: isNextEnabled
-                                  ? Colors.black
-                                  : MyColors.darGreyColor,
-                              fontSize: 15,
-                            ),
-                          ),
-                        ),
-                      ),
+                      },
                     ),
                   ),
                 ],
