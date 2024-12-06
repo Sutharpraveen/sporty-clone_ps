@@ -217,10 +217,9 @@ class _CreateNameScreenState extends State<CreateNameScreen> {
 
             Center(
               child: GestureDetector(
-                child: ,
                 onTap: () {
                   if(text.length>6){
-
+//fsdfsdfsad
                   }
 
                 },
