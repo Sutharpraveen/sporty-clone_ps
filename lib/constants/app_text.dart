@@ -16,4 +16,5 @@ class AppText{
   static const String confirmEmailLater = "You'll need to confirm this email later.";
   static const String useAtleastCharacters = "Use atleast 8 characters.";
   static const String gender_txt = "What's your gender?";
+  static const String yourname = "What's your name?";
 }

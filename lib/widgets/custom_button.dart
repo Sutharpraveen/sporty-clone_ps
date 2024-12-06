@@ -19,7 +19,7 @@ class CustomButton extends StatelessWidget {
       onTap: () {
         // Proceed only if validation is true and text length is >= 8
         if (validateText) {
-          if (text.isNotEmpty && text.length >= 8) {
+          if (text.isNotEmpty && text.length >= 1) {
             onTap();
           }
         } else {

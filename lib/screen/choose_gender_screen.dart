@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:spotifyclone/constants/app_text.dart';
 import 'package:spotifyclone/constants/constants.dart';
 import 'package:spotifyclone/screen/create_email_screen.dart';
+import 'package:spotifyclone/screen/create_same_screen.dart';
 import 'package:spotifyclone/widgets/custom_button.dart';
 
 class ChooseGenderScreen extends StatefulWidget {
@@ -33,12 +34,12 @@ class _ChooseGenderScreenState extends State<ChooseGenderScreen> {
   void goToNextScreen() {
     if (isGenderSelected) {
       // Implement navigation to the next screen
-      // Navigator.push(
-      //   context,
-      //   MaterialPageRoute(
-      //     builder: (context) => const CreateNameScreen(),
-      //   ),
-      // );
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => const CreateNameScreen(),
+        ),
+      );
       print("Navigating to next screen");
     }
   }
