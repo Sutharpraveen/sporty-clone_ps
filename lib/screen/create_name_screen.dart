@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:spotifyclone/DI/service_locator.dart';
+import 'package:spotifyclone/bloc/artist/artist_bloc.dart';
+import 'package:spotifyclone/bloc/artist/artist_event.dart';
 import 'package:spotifyclone/constants/app_text.dart';
 import 'package:spotifyclone/constants/constants.dart';
 import 'package:spotifyclone/main.dart';
+import 'package:spotifyclone/screen/choose_artist_screen.dart';
 import 'package:spotifyclone/screen/create_email_screen.dart';
 
 class CreateNameScreen extends StatefulWidget {
@@ -172,29 +177,24 @@ class _CreateNameScreenState extends State<CreateNameScreen> {
                     checkColor: MyColors.whiteColor,
                   ),
                 ),
-
                 const SizedBox(
                   height: 20,
                 ),
-
-
-
               ],
             ),
             Row(
               children: [
                 const SizedBox(
                   width: 290,
-                  child: Text("Share my registration data with Spotify's content providers for marketing purposes.",
+                  child: Text(
+                    "Share my registration data with Spotify's content providers for marketing purposes.",
                     style: TextStyle(
                         fontFamily: "AB",
                         fontSize: 12,
-                        color: MyColors.whiteColor
-                    ),),
+                        color: MyColors.whiteColor),
+                  ),
                 ),
-
                 const Spacer(),
-
                 Transform.scale(
                   scale: 1.5,
                   child: Checkbox(
@@ -209,22 +209,24 @@ class _CreateNameScreenState extends State<CreateNameScreen> {
                     checkColor: MyColors.whiteColor,
                   ),
                 ),
-
               ],
             ),
-
-            const Spacer(),
-
-            Center(
-              child: GestureDetector(
-                onTap: () {
-                  if(text.length>6){
-//fsdfsdfsad
-                  }
-
-                },
-              ),
-            )
+            //const Spacer(),
+           ElevatedButton(onPressed: () {
+             Navigator.push(
+               context,
+               MaterialPageRoute(
+                 builder: (context) => BlocProvider(
+                   create: (context) {
+                     var bloc = ArtistBloc(locator.get());
+                     bloc.add(ArtistListEvent());
+                     return bloc;
+                   },
+                   child: const ChooseArtistScreen(),
+                 ),
+               ),
+             );
+           }, child: Text("data"))
           ],
         ),
       )),

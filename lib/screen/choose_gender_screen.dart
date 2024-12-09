@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:spotifyclone/constants/app_text.dart';
 import 'package:spotifyclone/constants/constants.dart';
 import 'package:spotifyclone/screen/create_email_screen.dart';
-import 'package:spotifyclone/screen/create_same_screen.dart';
+import 'package:spotifyclone/screen/create_name_screen.dart';
 import 'package:spotifyclone/widgets/custom_button.dart';
 
 class ChooseGenderScreen extends StatefulWidget {
